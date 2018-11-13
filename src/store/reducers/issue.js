@@ -11,6 +11,7 @@ const issueReducer = (state = initialState, action) => {
       console.log("editIssue reducer");
       return state;
     }
+
     default:
       return state;
   }

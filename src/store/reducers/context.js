@@ -3,7 +3,8 @@ export const initialState = {
   issue: {
     description: "",
     title: "",
-    type: ""
+    type: "open",
+    id: ""
   },
   isEdit: false
 };

@@ -1,7 +1,7 @@
 import React from "react";
 
 const IssueList = () => (
-  <div>
+  <div className="list-container">
     <h1> IssueList </h1>
   </div>
 );
