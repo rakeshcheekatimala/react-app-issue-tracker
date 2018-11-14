@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.css";
 
 const IssueChart = () => (
-  <div className="chart-container">
+  <div>
     <h1> Issue Component </h1>
   </div>
 );

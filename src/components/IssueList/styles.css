@@ -1,3 +1,33 @@
-.list-container {
-  height: 50%;
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  width: 250px;
+  margin: 0.5em 0.5em;
+  flex-direction: column;
+  border-radius: 0.28571429rem;
+  border: 1px solid grey;
+}
+.content {
+  padding: 1em 1em;
+  border-bottom: 1px solid black;
+}
+
+.action-group {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  margin: 5px;
+}
+
+.issue-list-container {
+  overflow: scroll;
+}
+
+.header {
+  font-weight: 700;
+  margin: 5px 0px;
 }

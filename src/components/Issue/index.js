@@ -1,20 +1,39 @@
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
-import { saveIssue } from "../../store/actions/issue";
+import { saveIssue, getIssues, updateIssue } from "../../store/actions/issue";
 import "./styles.css";
 import { issueTypes } from "./issueTypes";
 
 class Issue extends PureComponent {
-  state = {
-    data: {
-      title: this.props.issue.title,
-      description: this.props.issue.description,
-      type: this.props.issue.type,
-      id: this.props.issue.id
-    },
-    loading: false,
-    errors: {}
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: {
+        title: this.props.issue ? this.props.issue.title : "",
+        description: this.props.issue ? this.props.issue.description : "",
+        type: this.props.issue ? this.props.issue.type : issueTypes[0],
+        id: this.props.issue ? this.props.issue.id : ""
+      },
+      loading: false,
+      errors: {}
+    };
+
+    console.log(this.props);
+    // -> { icon: 'home', … }
+  }
+
+  componentWillReceiveProps = nextProps => {
+    console.log("inside next props cylce", nextProps.issue);
+    this.setState({
+      data: {
+        id: nextProps.issue.id,
+        description: nextProps.issue.description,
+        type: nextProps.issue.type,
+        title: nextProps.issue.title
+      }
+    });
   };
+
   onChange = e => {
     this.setState({
       data: {
@@ -27,12 +46,18 @@ class Issue extends PureComponent {
   onSubmit = e => {
     const issueObj = this.state.data;
     e.preventDefault();
+    const { update, save, refreshList } = this.props;
     const errors = this.validate(issueObj);
     if (Object.keys(errors).length === 0) {
       this.setState({
         loading: true
       });
-      this.props.save(issueObj);
+      if (issueObj.id) {
+        update(issueObj);
+      } else {
+        save(issueObj);
+      }
+      refreshList();
       this.clearForm();
     }
   };
@@ -61,13 +86,13 @@ class Issue extends PureComponent {
 
   render() {
     const { errors, data } = this.state;
-
+    console.log("the id", this.props.issue.id);
     return (
       <div>
-        <h1> Create Issue </h1>
+        <h1> {data.id ? "Edit Issue" : "Create Issue"} </h1>
         <form className="form-container" onSubmit={this.onSubmit}>
           <div className="form-el-margin">
-            <label htmlFor="title"> Title</label>
+            <label htmlFor="title">Title</label>
             <input
               placeholder="please enter title"
               id="title"
@@ -131,7 +156,9 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch) {
   return {
-    save: issue => saveIssue(dispatch, issue)
+    save: issue => saveIssue(dispatch, issue),
+    refreshList: () => getIssues(dispatch),
+    update: issue => updateIssue(dispatch, issue)
   };
 }
 

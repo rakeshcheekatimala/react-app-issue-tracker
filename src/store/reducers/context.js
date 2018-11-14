@@ -5,6 +5,5 @@ export const initialState = {
     title: "",
     type: "open",
     id: ""
-  },
-  isEdit: false
+  }
 };

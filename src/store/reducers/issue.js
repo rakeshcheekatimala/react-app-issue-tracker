@@ -1,4 +1,4 @@
-import { SAVE_ISSUE, EDIT_ISSUE } from "../actionTypes";
+import { SAVE_ISSUE, EDIT_ISSUE, PUSH_ISSUES, SET_ISSUE } from "../actionTypes";
 import { initialState } from "./context";
 
 const issueReducer = (state = initialState, action) => {
@@ -11,7 +11,15 @@ const issueReducer = (state = initialState, action) => {
       console.log("editIssue reducer");
       return state;
     }
-
+    case PUSH_ISSUES: {
+      return { ...state, issues: action.payload };
+    }
+    case SET_ISSUE: {
+      return {
+        ...state,
+        issue: action.payload
+      };
+    }
     default:
       return state;
   }
