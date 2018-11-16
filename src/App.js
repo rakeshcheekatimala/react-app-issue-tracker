@@ -1,18 +1,22 @@
 import React, { Component } from "react";
-import { Issue, IssueList, IssueChart } from "./components";
+import {  Issue,IssueChart,IssueList } from "./components";
 import "./App.css";
 
 class App extends Component {
   render() {
     return (
-      <div className="container">
-        <div className="left-container">
-          <IssueChart />
-          <IssueList />
-        </div>
-        <div className="right-container">
-          <Issue />
-        </div>
+      <div>
+          <div className="top-container">
+            <div className="chart-container">
+              <IssueChart/>
+            </div>
+            <div className="right-container">
+              <Issue/>
+            </div>
+          </div>
+          <div>
+            <IssueList/>
+          </div>
       </div>
     );
   }

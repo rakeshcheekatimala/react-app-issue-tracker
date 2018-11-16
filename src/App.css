@@ -1,7 +1,11 @@
 /* For mobile phones: */
 @media only screen and (max-width: 768px) {
   .container {
+    display: flex;
     direction: column;
+  }
+  .chart-container {
+    flex-direction: none;
   }
 }
 
@@ -9,9 +13,17 @@
   display: flex;
   margin: 1% 0px;
 }
-.left-container {
-  width: 48%;
+
+.chart-container {
+  height: 500px;
+  display: flex;
+  flex-grow: 0.5;
 }
+.top-container {
+  display: flex;
+  flex-direction: row;
+}
+
 .right-container {
-  width: 48%;
+  flex-grow: 0.5
 }
