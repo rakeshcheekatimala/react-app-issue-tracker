@@ -23,13 +23,15 @@ class IssueList extends PureComponent {
       return (
         <div className="card" key={issue.id}>
           <div className="content">
-            <div className="header">{issue.title}</div>
+            <div className="header">
+              {issue.title}
+              <span className={"status " + issue.type}>{issue.type}</span>
+            </div>
             <div>{issue.description}</div>
           </div>
 
           <div className="action-group">
             <button onClick={() => this.onEdit(issue.id)}>Edit</button>
-            <button>Delete</button>
           </div>
         </div>
       );

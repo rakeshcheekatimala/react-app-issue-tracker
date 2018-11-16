@@ -31,3 +31,17 @@ button {
   font-weight: 700;
   margin: 5px 0px;
 }
+
+.status {
+  float: right;
+  color: #fff;
+}
+.status.close {
+  background: red;
+}
+.status.open {
+  background: green;
+}
+.status.reopen {
+  background: rgb(69, 69, 238);
+}
