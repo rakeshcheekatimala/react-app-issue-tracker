@@ -5,14 +5,14 @@ import Slice from '../Slice'
 import { organizeChartData } from '../../utils';
 
 class IssueChart extends React.Component {
+  
   render() {
     const height = window.innerHeight;
     const width=window.innerWidth;
     let {issues} =  this.props;
-
+    let data=[],textlabels=[];
     if(issues && issues.length>0) {
       let result = organizeChartData(issues,"type");
-      data=[];
       textlabels = Object.keys(result);
       for (let i=0;i<textlabels.length;i++) {
         data.push(result[textlabels[i]]);

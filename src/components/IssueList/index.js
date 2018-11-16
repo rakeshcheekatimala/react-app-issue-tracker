@@ -31,7 +31,7 @@ class IssueList extends PureComponent {
           </div>
 
           <div className="action-group">
-            <button onClick={() => this.onEdit(issue.id)}>Edit</button>
+            <button className="edit-btn" onClick={() => this.onEdit(issue.id)}>Edit</button>
           </div>
         </div>
       );
