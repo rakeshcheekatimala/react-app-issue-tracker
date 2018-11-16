@@ -9,9 +9,7 @@ class IssueChart extends React.Component {
     const height = window.innerHeight;
     const width=window.innerWidth;
     let {issues} =  this.props;
-    console.log('the data is ',issues)
-    let data =[14,20,13];
-    let textlabels = ['open','close','reopen']
+
     if(issues && issues.length>0) {
       let result = organizeChartData(issues,"type");
       data=[];
@@ -19,7 +17,7 @@ class IssueChart extends React.Component {
       for (let i=0;i<textlabels.length;i++) {
         data.push(result[textlabels[i]]);
       }
-      console.log('the data after for ',data)
+      console.log('the data after for organizeChartData',data)
     }
 
     let pie = d3.pie()(data);
