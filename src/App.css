@@ -27,3 +27,7 @@
 .right-container {
   flex-grow: 0.5
 }
+
+.container {
+  margin:15px;
+}

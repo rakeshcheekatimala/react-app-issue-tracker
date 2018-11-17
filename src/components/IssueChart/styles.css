@@ -1,3 +1,6 @@
-.chart-container {
-  height: 50%;
+.zero-issues-chart{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-left: 20px;
 }

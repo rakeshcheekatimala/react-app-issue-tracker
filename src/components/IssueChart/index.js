@@ -1,11 +1,18 @@
 import React from 'react';
 import * as d3 from "d3";
 import { connect } from "react-redux";
-import Slice from '../Slice'
+import Slice from '../Slice';
+import "./styles.css";
 import { organizeChartData } from '../../utils';
 
 class IssueChart extends React.Component {
-  
+  emptyIssues = () =>{
+    return(
+      <div className='zero-issues-chart'>
+        <h1> No Issues Created to display the Pie-Chart</h1>
+      </div>
+    )
+  }
   render() {
     const height = window.innerHeight;
     const width=window.innerWidth;
@@ -27,13 +34,19 @@ class IssueChart extends React.Component {
     let innerRadius = 0;
     // If innerRadius is zero then it is PieChart
     // If it is half of it then it is a Donut
-    return (
-      <svg height="100%" width="100%">
-        <g transform ={`translate(300,${outerRadius})`}>
-          <Slice pie={pie} data ={data} innerRadius={innerRadius} outerRadius={outerRadius} textlabels={textlabels}/>
-        </g>
-      </svg>
-    );
+    if(data.length===0){
+      return this.emptyIssues()
+    }
+    else {
+      return (
+        <svg height="100%" width="100%">
+          <g transform ={`translate(300,${outerRadius})`}>
+            <Slice pie={pie} data ={data} innerRadius={innerRadius} outerRadius={outerRadius} textlabels={textlabels}/>
+          </g>
+        </svg>
+      );
+    }
+
   }
 }
 
