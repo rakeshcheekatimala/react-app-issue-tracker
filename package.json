@@ -30,6 +30,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "babel-jest": "^23.6.0",
+    "jest": "^23.6.0",
     "redux-devtools-extension": "^2.13.5"
   }
 }
