@@ -1,8 +1,19 @@
 # react-app-issue-tracker
-This is simple application developed by React which has following features. As a user he can create ,edit and close some issues. Charts helps the user to identify the open issues from the list of issues. 
+This is simple application developed by React which has following features. As a user he can create ,edit and close some issues. Charts helps the user to identify the open issues from the list of issues.
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+Features:
+* [checkbox:checked] Initial Skelton and Setup of React Application.
+* [checkbox:checked] React + Redux Integration with extension dev-tools for the app.
+* [checkbox:checked] Initial Skelton for Components, folder structure of the App.
+* [checkbox:checked] Creation of Issue Form and Integration with Redux , Form Validation, Saving the form to localStorage once successful.
+* [checkbox:checked] IssueList Component changes and api integration to fetch the all the issues and     inject into redux for displaying the Issues-list.
+* [checkbox:checked] D3 Integration with IssueChart Component to display the count for Issue type.
+ e.g: open-1, reopen-3 close -5 where the total issues are 9.
+* [checkbox:unchecked] Unit-testing Need to start.
+
 
 ## Available Scripts
 
