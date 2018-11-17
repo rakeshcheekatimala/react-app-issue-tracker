@@ -40,7 +40,7 @@ class IssueChart extends React.Component {
     else {
       return (
         <svg height="100%" width="100%">
-          <g transform ={`translate(300,${outerRadius})`}>
+          <g transform ={`translate(${width/2},${height/2})`}>
             <Slice pie={pie} data ={data} innerRadius={innerRadius} outerRadius={outerRadius} textlabels={textlabels}/>
           </g>
         </svg>
