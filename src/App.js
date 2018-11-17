@@ -8,7 +8,7 @@ class App extends Component {
       <div className='container'>
           <div className="top-container">
             <div className="chart-container">
-              <IssueChart size={400}/>
+              <IssueChart/>
             </div>
             <div className="right-container">
               <Issue/>
