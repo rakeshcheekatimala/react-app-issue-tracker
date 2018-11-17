@@ -12,7 +12,8 @@ Features:
 * [x] IssueList Component changes and api integration to fetch the all the issues and     inject into redux for displaying the Issues-list.
 * [x] D3 Integration with IssueChart Component to display the count for Issue type.
  e.g: open-1, reopen-3 close -5 where the total issues are 9.
-* [] Unit-testing Need to start.
+* [x] Jest Setup and Unit test Cases for api, utils which covers the basic features of the app.
+  
 
 
 ## Available Scripts
