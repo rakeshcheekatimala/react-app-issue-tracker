@@ -1,33 +1,27 @@
 /* For mobile phones: */
+@media only screen and (min-width: 768px) {
+
+  .chart-container {
+    height: 500px;
+    display: flex;
+    flex-grow: 0.5;
+  }
+  .top-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .right-container {
+    flex-grow: 0.5
+  }
+
+}
 @media only screen and (max-width: 768px) {
   .container {
-    display: flex;
-    direction: column;
+    margin:15px;
   }
   .chart-container {
-    flex-direction: none;
+    height: 400px;
+    width: 400px;
   }
-}
-
-.container {
-  display: flex;
-  margin: 1% 0px;
-}
-
-.chart-container {
-  height: 500px;
-  display: flex;
-  flex-grow: 0.5;
-}
-.top-container {
-  display: flex;
-  flex-direction: row;
-}
-
-.right-container {
-  flex-grow: 0.5
-}
-
-.container {
-  margin:15px;
 }

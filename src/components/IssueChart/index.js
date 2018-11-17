@@ -14,8 +14,8 @@ class IssueChart extends React.Component {
     )
   }
   render() {
-    const height = window.innerHeight;
-    const width=window.innerWidth;
+    const height = window.innerHeight*0.5;
+    const width=window.innerWidth*0.5;
     let {issues} =  this.props;
     let data=[],textlabels=[];
     if(issues && issues.length>0) {

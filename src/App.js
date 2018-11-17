@@ -5,10 +5,10 @@ import "./App.css";
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className='container'>
           <div className="top-container">
             <div className="chart-container">
-              <IssueChart/>
+              <IssueChart size={400}/>
             </div>
             <div className="right-container">
               <Issue/>
