@@ -10,5 +10,9 @@ export const issueTypes = [
   {
     text: "close",
     value: "close"
+  },
+  {
+    text: "inprogress",
+    value: "inprogress"
   }
 ];

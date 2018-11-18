@@ -46,7 +46,11 @@ button {
   background: rgb(69, 69, 238);
 }
 
-.edit-btn{
+.status.inprogress {
+  background: purple;
+}
+
+.edit-btn {
   height: 30px;
   border: none;
   background-color: #1d252d;
