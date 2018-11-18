@@ -15,6 +15,7 @@ Features:
       e.g: open-1, reopen-3 close -5 where the total issues are 9.
 - [x] Jest Setup and Unit test Cases for api, utils which covers the basic features of the app.
 - [x] Cypress Setup and e2e test cases for createIssue,EditPost
+- [x] Code Clean up and Added PropType Validation for Components
 
 ## Available Scripts
 
