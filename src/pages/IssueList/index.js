@@ -68,13 +68,9 @@ function mapDispatchToProps(dispatch) {
 
 IssueList.propTypes = {
   issues: PropTypes.array.isRequired,
-  editIssue: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-    id: PropTypes.number
-  })
+  editIssue: PropTypes.func.isRequired
 };
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps
