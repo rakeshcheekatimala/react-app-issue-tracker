@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import { saveIssue, getIssues, updateIssue } from "../../store/actions/issue";
 import "./styles.css";
 import { issueTypes } from "./issueTypes";
@@ -17,13 +18,9 @@ class Issue extends PureComponent {
       loading: false,
       errors: {}
     };
-
-    console.log(this.props);
-    // -> { icon: 'home', … }
   }
 
   componentWillReceiveProps = nextProps => {
-    console.log("inside next props cylce", nextProps.issue);
     this.setState({
       data: {
         id: nextProps.issue.id,
@@ -35,6 +32,12 @@ class Issue extends PureComponent {
   };
 
   onChange = e => {
+    const { errors } = this.state;
+
+    if (errors) {
+      delete errors[e.target.name]; // fir for create Issue form validation
+    }
+
     this.setState({
       data: {
         ...this.state.data,
@@ -86,7 +89,6 @@ class Issue extends PureComponent {
 
   render() {
     const { errors, data } = this.state;
-    console.log("the id", this.props.issue.id);
     return (
       <div>
         <h1> {data.id ? "Edit Issue" : "Create Issue"} </h1>
@@ -161,6 +163,15 @@ function mapDispatchToProps(dispatch) {
     update: issue => updateIssue(dispatch, issue)
   };
 }
+
+Issue.propTypes = {
+  data: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    id: PropTypes.number
+  })
+};
 
 export default connect(
   mapStateToProps,

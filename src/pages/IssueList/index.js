@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import { getIssues, setIssue } from "../../store/actions/issue";
 import { findIssueById } from "../../utils";
 import "./styles.css";
@@ -12,7 +13,6 @@ class IssueList extends PureComponent {
     return <div> No Issues Created Yet</div>;
   };
   onEdit = id => {
-    console.log("Id is:" + id);
     const { issues, editIssue } = this.props;
     const issue = findIssueById(issues, id);
     editIssue(issue);
@@ -31,7 +31,9 @@ class IssueList extends PureComponent {
           </div>
 
           <div className="action-group">
-            <button className="edit-btn" onClick={() => this.onEdit(issue.id)}>Edit</button>
+            <button className="edit-btn" onClick={() => this.onEdit(issue.id)}>
+              Edit
+            </button>
           </div>
         </div>
       );
@@ -39,7 +41,6 @@ class IssueList extends PureComponent {
   };
   render() {
     const { issues } = this.props;
-    console.log(issues);
     return (
       <div className="issue-list-container">
         <h1>IssueList </h1>
@@ -54,7 +55,6 @@ class IssueList extends PureComponent {
 }
 
 function mapStateToProps(state) {
-  console.log("inside map state", state.issue);
   return {
     issues: state.issue.issues
   };
@@ -65,6 +65,16 @@ function mapDispatchToProps(dispatch) {
     editIssue: issue => setIssue(dispatch, issue)
   };
 }
+
+IssueList.propTypes = {
+  issues: PropTypes.array.isRequired,
+  editIssue: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    id: PropTypes.number
+  })
+};
 export default connect(
   mapStateToProps,
   mapDispatchToProps

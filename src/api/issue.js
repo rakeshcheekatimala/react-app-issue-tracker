@@ -1,12 +1,10 @@
 import uuidv1 from "uuid/v1";
 export const createIssue = issue => {
-  console.log("saving the data to localStorage");
   let issues = localStorage.getItem("issues");
   issues = JSON.parse(localStorage.getItem("issues") || "[]");
   issue.id = uuidv1();
   issues.push(issue);
   localStorage.setItem("issues", JSON.stringify(issues));
-  console.log(issues);
 };
 
 export const fetchIssues = () => {
