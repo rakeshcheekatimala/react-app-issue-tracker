@@ -16,6 +16,7 @@ Features:
 - [x] Jest Setup and Unit test Cases for api, utils which covers the basic features of the app.
 - [x] Cypress Setup and e2e test cases for createIssue,EditPost
 - [x] Code Clean up and Added PropType Validation for Components
+- [x] In Develop Branch added the functionality for change of Items with Draggable feature
 
 ## Available Scripts
 
