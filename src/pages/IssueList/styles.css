@@ -52,9 +52,51 @@ button {
 
 .edit-btn {
   height: 30px;
+  width: 60px;
   border: none;
   background-color: #1d252d;
   color: #fff;
   border-radius: 20px;
-  width: 40%;
+}
+
+.card-layout {
+  display: flex;
+  flex-direction: row;
+}
+.card-layout .issues {
+  width: calc(100% - 20px);
+  border: 1px solid black;
+  margin: 0 10px;
+}
+
+.card-layout h1 {
+  text-align: center;
+  background: #1f77b4;
+  color: #fff;
+  padding: 10px;
+  margin: 0px;
+}
+
+.issue-list-container {
+  margin: 0px 10px;
+}
+
+.card-layout .cards {
+  justify-content: center;
+}
+
+.card-layout .card {
+  width: 90%;
+  margin: 2%;
+}
+
+@media only screen and (max-width: 768px) {
+  .card-layout {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
+  .card-layout .issues {
+    margin: 10px 10px;
+  }
 }
