@@ -14,14 +14,17 @@
     "react-scripts": "2.1.1",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.2",
+    "snyk": "^1.248.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "npm run test --silent",
     "eject": "react-scripts eject",
-    "e2e": "cypress open"
+    "e2e": "cypress open",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,5 +42,6 @@
     "cypress": "^3.1.1",
     "jest": "^23.6.0",
     "redux-devtools-extension": "^2.13.5"
-  }
+  },
+  "snyk": true
 }
